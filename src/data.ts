@@ -1,4 +1,4 @@
-export interface Product {
+export interface Products {
     id: number;
     name: string,
     url: string,
@@ -9,12 +9,12 @@ export interface Product {
     images: ImagemProduto[];
 }
 
-interface ImagemProduto {
+export interface ImagemProduto {
     url: string,
     description: string
 }
 
-export const products: Product[] = [{
+export const products: Products[] = [{
     id: 1,
     name: 'Blusa Plus Size Feminina Ampla Decote Malha Onça Preto Filipa by Reviva Fashion',
     url: 'blusa-plus-onca-preto',
