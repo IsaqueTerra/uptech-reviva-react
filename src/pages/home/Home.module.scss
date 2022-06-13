@@ -1,0 +1,361 @@
+@import '../../components/Product/Sizes/Sizes.module.scss';
+@import '../../components/Product/Button/Button.module.scss';
+
+$font-size-cart: 1.2em;
+
+.content {
+  position: relative;
+}
+
+.content_cart {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+
+  @media screen and(max-width: $large) {
+    width: 100%;
+  }
+
+  @media screen and(max-width: $medium) {
+    justify-content: flex-start;
+  }
+}
+
+.cart_title {
+  font-size: 2.5em;
+  grid-area: title;
+  margin: .5em 0;
+}
+
+.cart_product {
+  column-gap: 1em;
+  display: grid;
+  grid-template-columns: 15% 20% 20% 10% 15% 10%;
+  grid-template-rows: auto 20em;
+  height: 22em;
+  @include border-images;
+  grid-template-areas:
+    "image description size value quantitytity subtotal";
+
+  @media screen and(max-width: $medium) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "image description"
+      "image size"
+      "image value"
+      "image quantitytity"
+      "image subtotal";
+    height: auto;
+    margin: 1em 0;
+  }
+
+  @media screen and(max-width: $small) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+      "image "
+      "description "
+      "size "
+      "value "
+      "quantitytity"
+      "subtotal";
+    row-gap: 1em;
+  }
+}
+
+.product_image {
+  grid-area: image;
+}
+
+.product_description {
+  font-size: $font-size-cart;
+  grid-area: description;
+}
+
+.description_title {
+  margin: 0;
+}
+
+.description {
+  font-size: $font-size-cart;
+  margin: .2em 0;
+}
+
+
+
+.size_title {
+  margin: 0;
+}
+
+.size-label-bag {
+  font-size: $font-size-cart;
+  @extend .size_label;
+}
+
+.product_value {
+  font-size: $font-size-cart;
+  grid-area: value;
+}
+
+.value_title {
+  margin: 0;
+}
+
+.value {
+  font-size: $font-size-cart;
+  margin: .2em 0;
+}
+
+.product_quantity {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: $font-size-cart;
+  grid-area: quantity;
+
+  @media screen and(max-width: $medium) {
+    align-items: flex-start;
+  }
+}
+
+.quantity_title {
+  margin: 0;
+}
+
+.quantity {
+  border-radius: .3em;
+  border: 1px solid;
+  margin: .2em 0;
+  text-align: center;
+  width: 3em;
+}
+
+.product_subtotal {
+  font-size: $font-size-cart;
+  grid-area: subtotal;
+}
+
+.subtotal_title {
+  margin: 0;
+}
+
+.subtotal {
+  font-size: $font-size-cart;
+  margin: .2em 0;
+}
+
+.cart_checkout {
+  background-color: $primary-color;
+  box-sizing: border-box;
+  color: $primary-color-negative;
+  display: flex;
+  flex-direction: column;
+  font-size: 2em;
+  font-weight: bold;
+  grid-area: checkout;
+  line-height: 1em;
+  margin: 2em;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 20%;
+
+  @media screen and(max-width: $large) {
+    margin: 0;
+    position: relative;
+    width: 100%;
+  }
+}
+
+.checkout_total {
+  margin-top: 0;
+  word-spacing: 20;
+
+  @media screen and(max-width: $large) {
+    font-size: $font-size-cart;
+  }
+}
+
+.total {
+  text-align: center;
+  text-align: justify;
+  width: 100%;
+}
+
+.checkout_button {
+  background-color: $secondary-color;
+  border: none;
+  box-sizing: border-box;
+  color: inherit;
+  font-size: 1em;
+  font-weight: bold;
+  height: auto;
+  margin: auto 0 0 0;
+  padding: .5em;
+  text-decoration: none;
+  width: 100%;
+
+  &:hover {
+    background-color: $tertiary-color;
+    cursor: pointer;
+  }
+}
+
+.news-blog_image-2 {
+  grid-area: banner-2;
+  width: 100%;
+}
+
+
+.content_details {
+  display: grid;
+  gap: 0 2em;
+  grid-template-areas:
+    "image-main title"
+    "image-main description"
+    "image-main products"
+    "image-main size"
+    "image-main button";
+  grid-template-columns: 35% 65%;
+  grid-template-rows: 10% 28% 42% 10% 10%;
+  margin: 7.2em 0;
+  width: calc(100% - 2em);
+
+  @media screen and(max-width: $extra-large) {
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 10% 30% 35% 13% 10%;
+  }
+
+  @media screen and(max-width: $large) {
+    grid-template-areas:
+      "image-main title"
+      "image-main description"
+      "products products"
+      "size size"
+      "button button";
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 6em auto 30% 5% 10%;
+    row-gap: 1em;
+  }
+
+  @media screen and(max-width: $medium) {
+    grid-template-areas:
+      "image-main"
+      "title"
+      "description"
+      "products "
+      "size"
+      "button";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+    margin: 0;
+    row-gap: 1em;
+    width: 100%;
+  }
+}
+
+.details_title {
+  font-size: 2.4em;
+  grid-area: title;
+  margin: 0;
+  width: calc(100% - 1em);
+
+  @media screen and(min-width: 0) {
+    font-size: 2em;
+  }
+}
+
+.details_description {
+  font-size: 2em;
+  grid-area: description;
+  margin: .5em 0;
+  width: calc(100% - 1em);
+
+  @media screen and(max-width: $extra-large) {
+    font-size: 1.7em;
+    margin: 1em 0;
+  }
+}
+
+.details_images {
+  align-items: center;
+  display: flex;
+  grid-area: products;
+  height: auto;
+  justify-content: space-between;
+  width: 100%;
+  @include border-images;
+}
+
+.image_secundary {
+  width: 20%;
+}
+
+.image_link {
+  max-width: 15em;
+  margin: .5em;
+}
+
+.details_image-main {
+  grid-area: image-main;
+  @include border-images;
+}
+
+.image-main_main {
+  width: 100%;
+}
+
+.details_size {
+  align-self: flex-end;
+  grid-area: size;
+  margin: auto 0;
+}
+
+.size_label-bag {
+  font-size: 2em;
+  @extend .size_label;
+}
+
+.product_button-bag-details {
+  @extend .product_button-bag;
+  align-self: flex-end;
+  grid-area: button;
+  height: 4.5em;
+  width: 25em;
+
+  @media screen and(max-width: $medium) {
+    width: 100%;
+  }
+}
+
+.button-bag-details {
+  @extend .button-bag;
+}
+
+.menu-navegation_button:hover {
+  @media screen and (max-width: $medium) {
+    cursor: pointer;
+  }
+}
+
+.products_title {
+  @media screen and (max-width: $medium) {
+    font-size: 1.2em;
+    width: 90%;
+  }
+}
+
+.contact_icon-whatsapp {
+  height: 1em;
+  margin-left: .3em;
+}
+
+
+.contact_icon-telephone {
+  height: 1em;
+  margin-left: .3em;
+}

@@ -1,0 +1,9 @@
+@import '../../pages/global.scss';
+
+.content_products {
+  display: flex;
+
+  @media screen and (max-width: $medium) {
+    flex-wrap: wrap;
+  }
+}
