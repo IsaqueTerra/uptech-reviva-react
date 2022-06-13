@@ -1,0 +1,46 @@
+@import '../../../styles/global.scss';
+
+.footer_network-social {
+    grid-area: social;
+    justify-self: center;
+    margin: 0;
+    padding: 0;
+
+    @media screen and (max-width: $large) {
+        justify-self: center;
+    }
+}
+
+.network-social_title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 0 0 .5em 0;
+}
+
+
+.network-social_list-icons {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    width: 80%;
+
+    @media screen and (max-width: $extra-large) {
+        width: 80%;
+    }
+
+    @media screen and (max-width: $large) {
+        justify-content: space-around;
+        width: 100%;
+    }
+}
+
+.list-icons_icon {
+    transition: .2s all ease-in-out;
+
+    &:hover {
+        margin: 0 1em;
+        transform: scale(1.1);
+    }
+}
