@@ -1,14 +1,15 @@
-import { ICartListState, IInventoryState, IProducts } from '../../data'
+import { IProducts } from '../../data'
 import styles from './Product.module.scss'
 import Sizes from './Button_size_list'
 import Images from './Images'
 import Button from './Button'
 import Name from './Name'
 import Price from './Price'
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
-import { cartListState, inventoryState, postListState } from '../../state/atoms'
-import { useEffect } from 'react'
+import { useRecoilState} from 'recoil'
+import { cartListState, inventoryState } from '../../state/atoms'
 
+
+export const findItemById = (list: IProducts[], id: number) => list.some(item => item.id === id)
 
 const Product = (product: IProducts) => {
 
@@ -18,7 +19,6 @@ const Product = (product: IProducts) => {
     const newCartList = JSON.parse(JSON.stringify(cartList))
     const newInventoryList = JSON.parse(JSON.stringify(inventoryList))
 
-    const findItemById = (list: IProducts[], id: number) => list.some(item => item.id === id)
 
     const incrementInCart = (list: IProducts[], id: number) => {
         return list.map((product: IProducts) => {
@@ -40,7 +40,6 @@ const Product = (product: IProducts) => {
     .reduce((acc, item) => item.quantity_avaliable > 0 && item.id === id ? true : acc, false)
 
     const condition = itemsIsAvailable(inventoryList, product.id);
-
 
     const decrementInInventary = (list: IProducts[], id: number) => {
         return list.map((product: IProducts) => {

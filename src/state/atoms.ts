@@ -95,7 +95,7 @@ export const inventoryState: RecoilState<IProducts[]> = atom({
         price: 129.90,
         description: 'Ideal para compor looks com mood romântico e estiloso, o Top Cropped Plus Size Feminino Alças Franzidas Abstrato Marrom Filipa by Riachuelo é a escolha perfeita para você! Confeccionado em viscose, o top pode ser combinado com calça jogger de cintura alta e sandália, criando um visual incrível!',
         size_avaliable: ['P', 'M', 'G'],
-        quantity_avaliable: 0,
+        quantity_avaliable: 3,
         images: [
             { url: '../../images/product-7/img1.jpg', description: 'Modelo com Top Cropped, Plus Size, com Recorte Alça Média, Decote Princesa, Estampa Abstrata Marrom' },
             { url: '../../images/product-7/img2.jpg', description: 'Modelo com Top Cropped, Plus Size, com Recorte Alça Média, Decote Princesa, Estampa Abstrata Marrom' },
