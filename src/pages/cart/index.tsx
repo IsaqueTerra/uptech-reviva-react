@@ -7,7 +7,6 @@ const Cart = () => {
             <PageTemplate title="Cart">
                 <CartMain />
             </PageTemplate>
-
         </>
     )
 }

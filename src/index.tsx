@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RecoilRoot } from 'recoil';
-import Cart from 'pages/cart';
-import Home from 'pages/home';
 import 'pages/home/Home.module.scss';
+import App from 'App';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,8 +10,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <RecoilRoot>
-      <Home />
-      {/* <Cart /> */}
+      <App />
     </RecoilRoot>
   </React.StrictMode>
 );

@@ -128,3 +128,7 @@ export const cartListState: RecoilState<IProducts[]> = atom({
     default: [] as IProducts[]
 });
 
+export const routes: RecoilState<boolean> = atom({
+    key: 'Routes',
+    default: true
+});
