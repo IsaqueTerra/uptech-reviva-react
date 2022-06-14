@@ -1,14 +1,17 @@
-import ProductCart from "."
-import { Products, products } from "../../../data"
+import { useRecoilValue } from "recoil"
+import ProductCart from "./index"
+import { IProducts } from "../../../data"
+import { cartListState, postListState } from "../../../state/atoms"
 
-interface IProductListSection {
-    listProduct: Products[]
-}
+const ProductListSection = () => {
+    const cartList = useRecoilValue(cartListState)
+    const postList = useRecoilValue(postListState)
 
-const ProductListSection = ({ listProduct }: IProductListSection) => {
+    const idItemsCard = cartList.map(itemCart => itemCart.id)
+
     return (
         <div>
-            {listProduct.map((product) => <ProductCart {...product} key={product.id} />)}
+            {cartList.map((product) => <ProductCart {...product} key={product.id} />)}
         </div>
     )
 }

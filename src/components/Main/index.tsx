@@ -1,22 +1,26 @@
-import { products, Products } from "../../data"
+import { useRecoilValue } from "recoil"
+import { postListState } from "../../state/atoms"
 import Banner from "../Banner"
-import ContentProducts from "../Container_Products"
 import News from "../News"
-import Product from "../Product"
 import ContainerSearch from "../Search"
 import styles from "./Main.module.scss"
+import ProductList from "./Product_List"
 
 const Main = () => {
+
+    const products = useRecoilValue(postListState)
     return (
         <main className={styles.content}>
             <ContainerSearch />
-            <ContentProducts title="Últimos lançamentos">
-                {products.slice(0, 4).map((product: Products) => <Product key={product.id} {...product} />)}
-            </ContentProducts>
+            <ProductList 
+                products={products} 
+                category="ultimos-lancamentos" 
+                titleBanner="Últimos lançamentos" />
             <Banner />
-            <ContentProducts title="Coleção de Verão 2022">
-                {products.slice(4, 8).map((product: Products) => <Product key={product.id} {...product} />)}
-            </ContentProducts>
+            <ProductList 
+                products={products} 
+                category="colecao-verao" 
+                titleBanner="Últimos lançamentos" />
             <News />
         </main>
     )
