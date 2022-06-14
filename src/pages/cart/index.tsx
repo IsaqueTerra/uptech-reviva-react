@@ -1,9 +1,13 @@
 import CartMain from "components/Cart"
+import PageTemplate from "pages/templates"
 
 const Cart = () => {
     return (
         <>
-            <CartMain />
+            <PageTemplate title="Cart">
+                <CartMain />
+            </PageTemplate>
+
         </>
     )
 }

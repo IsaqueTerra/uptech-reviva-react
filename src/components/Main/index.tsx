@@ -6,7 +6,6 @@ import styles from "./Main.module.scss"
 import ProductList from "./Product_List"
 
 const Main = () => {
-
     const products = useRecoilValue(postListState)
     return (
         <main className={styles.content}>
