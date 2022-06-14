@@ -1,10 +1,10 @@
-import { IProducts } from '../../../data'
+import { IProducts } from 'data'
 import Images from '../../Product/Images'
 import Sizes from '../../Product/Button_size_list'
 import styles from './ProductCart.module.scss'
 import ProductFeatures from './Product_features'
 import { useRecoilState } from 'recoil'
-import { cartListState, inventoryState } from '../../../state/atoms'
+import { cartListState, inventoryState } from 'state/atoms'
 import { useEffect, useState } from 'react'
 
 const ProductCart = (product: IProducts) => {

@@ -1,5 +1,5 @@
-import { atom, RecoilState, useRecoilState } from "recoil";
-import { ICartListState, IInventoryState, IProducts } from "../data";
+import { atom, RecoilState } from "recoil";
+import { IProducts } from "data";
 
 export const inventoryState: RecoilState<IProducts[]> = atom({
     key: 'InventoryState',

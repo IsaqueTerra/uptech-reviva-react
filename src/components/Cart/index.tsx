@@ -7,7 +7,6 @@ import ListSubtotal from './Subtotal/ListSubtotal'
 const CartMain = () => {
     return (
         <main className={styles.content}>
-            <ContainerSearch />
             <section className={styles.content_cart} id="cart">
                 <h1 className={styles.cart_title}>Minha Sacola</h1>
                 <ProductListSection />

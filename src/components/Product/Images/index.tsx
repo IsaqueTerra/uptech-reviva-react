@@ -1,4 +1,4 @@
-import { IImagemProduto } from "../../../data"
+import { IImagemProduto } from "data"
 import styles from './Images.module.scss'
 
 const Images = ({ images }: { images: IImagemProduto[] }) => {

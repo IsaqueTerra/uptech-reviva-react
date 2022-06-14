@@ -1,4 +1,4 @@
-import { IProducts } from '../../data'
+import { IProducts } from 'data'
 import styles from './Product.module.scss'
 import Sizes from './Button_size_list'
 import Images from './Images'
@@ -6,7 +6,7 @@ import Button from './Button'
 import Name from './Name'
 import Price from './Price'
 import { useRecoilState} from 'recoil'
-import { cartListState, inventoryState } from '../../state/atoms'
+import { cartListState, inventoryState } from 'state/atoms'
 
 
 export const findItemById = (list: IProducts[], id: number) => list.some(item => item.id === id)

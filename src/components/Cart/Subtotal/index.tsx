@@ -1,6 +1,6 @@
 import { useRecoilValue } from 'recoil';
-import { IProducts } from '../../../data';
-import { cartListState } from '../../../state/atoms';
+import { IProducts } from 'data';
+import { cartListState } from 'state/atoms';
 import styles from './Subtotal.module.scss'
 
 interface ISubtotal {

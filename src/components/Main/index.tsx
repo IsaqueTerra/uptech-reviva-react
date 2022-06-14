@@ -1,8 +1,7 @@
 import { useRecoilValue } from "recoil"
-import { postListState } from "../../state/atoms"
+import { postListState } from "state/atoms"
 import Banner from "../Banner"
 import News from "../News"
-import ContainerSearch from "../Search"
 import styles from "./Main.module.scss"
 import ProductList from "./Product_List"
 
@@ -11,7 +10,6 @@ const Main = () => {
     const products = useRecoilValue(postListState)
     return (
         <main className={styles.content}>
-            <ContainerSearch />
             <ProductList 
                 products={products} 
                 category="ultimos-lancamentos" 

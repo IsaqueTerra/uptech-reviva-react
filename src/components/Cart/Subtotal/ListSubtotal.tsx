@@ -1,8 +1,8 @@
 import React from 'react'
 import { useRecoilValue } from 'recoil'
 import Subtotal from '.'
-import { IProducts } from '../../../data'
-import { cartListState } from '../../../state/atoms'
+import { IProducts } from 'data'
+import { cartListState } from 'state/atoms'
 
 const ListSubtotal = () => {
     const cartList: IProducts[] = useRecoilValue(cartListState)

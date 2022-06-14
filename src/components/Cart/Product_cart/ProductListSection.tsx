@@ -1,6 +1,6 @@
 import { useRecoilValue } from "recoil"
 import ProductCart from "./index"
-import { cartListState, postListState } from "../../../state/atoms"
+import { cartListState, postListState } from "state/atoms"
 
 const ProductListSection = () => {
     const cartList = useRecoilValue(cartListState)

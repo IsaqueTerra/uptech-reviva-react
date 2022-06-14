@@ -1,8 +1,5 @@
-import React from 'react'
-import { useRecoilValue } from 'recoil'
-import { IProducts } from '../../data'
-import { postListState } from '../../state/atoms'
-import ProductListSection from '../Cart/Product_cart/ProductListSection'
+
+import { IProducts } from 'data'
 import ContentProducts from '../Container_Products'
 import Product from '../Product'
 

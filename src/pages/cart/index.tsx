@@ -1,15 +1,9 @@
-import CartMain from "../../components/Cart"
-import Footer from "../../components/Footer"
-import Header from "../../components/Header"
-import Menu from "../../components/Menu"
+import CartMain from "components/Cart"
 
 const Cart = () => {
     return (
         <>
-            <Header />
-            <Menu />
             <CartMain />
-            <Footer />
         </>
     )
 }
