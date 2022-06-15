@@ -56,14 +56,11 @@ const ProductCart = (product: IProducts) => {
             <ProductFeatures title="Quantidade">
                 <input id={(3).toString()} className={styles.quantity}
                     type="number"
-                    min={1}
                     max={product.quantity_avaliable}
                     value={product.items_cart} onChange={(event) => {
 
                         if (Number(event.target.value) > product.quantity_avaliable) {
                             event.target.value = product.quantity_avaliable.toString()
-                        }else if (Number(event.target.value) == 0) {
-                            event.target.value = "1"
                         }
                         setUpdateInInventary(Number(event.target.value));
                         setUpdateQtyCart(Number(event.target.value));

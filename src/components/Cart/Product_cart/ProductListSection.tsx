@@ -6,9 +6,13 @@ const ProductListSection = () => {
     const cartList = useRecoilValue(cartListState)
 
     return (
-        <div>
-            {cartList.map((product) => <ProductCart {...product} key={product.id} />)}
-        </div>
+        <>
+            {cartList.map((product) => {
+                if (product.items_cart! > 0) {
+                    return <ProductCart {...product} key={product.id} />
+                }
+            })}
+        </>
     )
 }
 

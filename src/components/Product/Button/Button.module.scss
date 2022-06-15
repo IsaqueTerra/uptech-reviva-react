@@ -5,8 +5,9 @@
   perspective: 500px;
 
   &:hover .button-bag_content {
+    cursor: pointer;
     transform: rotateY(180deg);
-    transition: transform 0.5s .5s;
+    transition: transform 0.2s;
   }
 
   &:active {
@@ -55,6 +56,10 @@
   border: none;
   color: $primary-color-negative;
   font-size: 1.4em;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .content_back-button--unavailable {
@@ -68,6 +73,6 @@
   }
 
   &:focus {
-    background:$color-details;
+    background: $color-details;
   }
 }

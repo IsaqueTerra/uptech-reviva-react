@@ -1,4 +1,3 @@
-import React from 'react'
 import { useRecoilValue } from 'recoil'
 import Subtotal from '.'
 import { IProducts } from 'data'
@@ -8,9 +7,11 @@ const ListSubtotal = () => {
     const cartList: IProducts[] = useRecoilValue(cartListState)
     return (
         <>
-            {cartList.map((product: IProducts) => (
-                <Subtotal key={product.id} product={product} />
-            ))}
+            {cartList.map((product: IProducts) => {
+                if (product.items_cart! > 0) {
+                    return <Subtotal key={product.id} product={product} />
+                }
+            })}
         </>
     )
 }
