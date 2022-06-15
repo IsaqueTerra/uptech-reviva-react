@@ -191,11 +191,7 @@ $font-size-cart: 1.2em;
   font-size: 1.4em;
 }
 
-.menu-navegation_button:hover {
-  @media screen and (max-width: $medium) {
-    cursor: pointer;
-  }
-}
+
 
 .products_title {
   @media screen and (max-width: $medium) {

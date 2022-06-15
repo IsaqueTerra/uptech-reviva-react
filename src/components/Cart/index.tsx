@@ -7,7 +7,7 @@ import ListSubtotal from './Subtotal/ListSubtotal'
 const CartMain = () => {
     return (
         <main className={styles.content}>
-            <section className={styles.content_cart} id="cart">
+            <section className={styles.content_cart}>
                 <h1 className={styles.cart_title}>Minha Sacola</h1>
                 <ProductListSection />
                 <ListSubtotal />

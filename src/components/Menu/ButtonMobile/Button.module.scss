@@ -1,24 +1,23 @@
 @import 'styles/global.scss';
 
 .menu-navegation_button {
-    display: none;
-  
-    @media screen and (max-width: $medium) {
-      background: no-repeat left url(../../../../public/icons/logo-menu.svg);
-      border: none;
-      color: $primary-color-negative;
-      display: inline-block;
-      font-size: 1.7em;
-      font-weight: bold;
-      margin: 0 1em;
-      text-align: end;
-      width: 5em;
-    }
-  }
-  
+  display: none;
 
-  .menu-navegation--active {
-    @media screen and (max-width: $medium) {
-        left: 0;
-    }
+  @media screen and (max-width: $medium) {
+    background: no-repeat left url(../../../../public/icons/logo-menu.svg);
+    border: none;
+    color: $primary-color-negative;
+    display: inline-block;
+    font-size: 1.7em;
+    font-weight: bold;
+    margin: 0 1em;
+    text-align: end;
+    width: 5em;
+  }
+}
+
+.menu-navegation_button:hover {
+  @media screen and (max-width: $medium) {
+    cursor: pointer;
+  }
 }
