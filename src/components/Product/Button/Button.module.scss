@@ -32,14 +32,12 @@
     cursor: pointer;
   }
 }
-
 .content_back-button {
   background: no-repeat center $color-details url(../../../../public/icons/check-solid.svg);
   color: $primary-color-negative;
   transform: rotateY(180deg);
 
   @extend .content_front-button;
-
   &:focus {
     background: no-repeat center #008844 url(../../../../public/icons/check-solid-white.svg);
   }
