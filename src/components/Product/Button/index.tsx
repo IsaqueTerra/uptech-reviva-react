@@ -1,18 +1,21 @@
 import styles from './Button.module.scss'
 import React, { Children } from 'react'
-import { JsxChild, JsxElement } from 'typescript'
 
-const Button = ({ children }: { children: React.ReactNode }) =>
+interface IButton {
+    children: React.ReactNode,
+    classItem: string
+    onClick?: () => void,
+}
+
+const Button = ({ children, classItem ,onClick }: IButton) =>
 (
-    <div className={styles["product_button-bag"]}>
+    <div className={styles["product_button-bag"]} onClick={onClick}>
         <div className={styles["button-bag_content"]}>
             <div className={styles["content_front-button"]}>
                 <button className={styles["button-bag"]}>{children}</button>
             </div>
-            <button className={styles["content_back-button"]}></button>
+            <button className={styles[classItem]}></button>
         </div>
-
-
     </div>
 )
 

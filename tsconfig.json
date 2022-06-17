@@ -23,9 +23,14 @@
       {
         "name": "typescript-plugin-css-modules"
       }
-    ]
+    ],
+    "baseUrl": "./src",
+    "paths": {
+      "compontens": ["./src/components/*"],
+    }
   },
   "include": [
-    "src"
-, "src/main.ts"  ]
+    "src",
+    "src/main.ts"
+  ]
 }

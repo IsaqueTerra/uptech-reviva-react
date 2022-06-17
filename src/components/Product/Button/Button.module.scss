@@ -1,12 +1,13 @@
-@import '../../../pages/global.scss';
+@import 'styles/global.scss';
 
 .product_button-bag {
   grid-area: button;
   perspective: 500px;
 
   &:hover .button-bag_content {
+    cursor: pointer;
     transform: rotateY(180deg);
-    transition: transform 0.5s .5s;
+    transition: transform 0.2s;
   }
 
   &:active {
@@ -37,7 +38,6 @@
   transform: rotateY(180deg);
 
   @extend .content_front-button;
-  
   &:focus {
     background: no-repeat center #008844 url(../../../../public/icons/check-solid-white.svg);
   }
@@ -54,4 +54,23 @@
   border: none;
   color: $primary-color-negative;
   font-size: 1.4em;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.content_back-button--unavailable {
+  @extend .content_back-button;
+  background-image: none;
+
+  &::before {
+    content: 'Quantidade Indisponível';
+    color: $font-color;
+    font-size: 1.2em;
+  }
+
+  &:focus {
+    background: $color-details;
+  }
 }

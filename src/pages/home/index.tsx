@@ -1,18 +1,15 @@
+import Main from "components/Main"
+import PageTemplate from "pages/templates"
+import { useRecoilValue } from "recoil"
+import { postListState } from "state/atoms"
 
-import Menu from "../../components/Menu"
-import Footer from "../../components/Footer"
-import Header from "../../components/Header"
-import Main from "../../components/Main"
-
-const Index = () => {
+const Home = () => {
+   const products = useRecoilValue(postListState)
    return (
-      <>
-         <Header />
-         <Menu />
-         <Main />
-         <Footer />
-      </>
+      <PageTemplate title="Home">
+         <Main/>
+      </PageTemplate>
    )
 }
 
-export default Index
+export default Home

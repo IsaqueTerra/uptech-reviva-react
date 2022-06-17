@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Index from './pages/home';
-import './pages/home/Home.module.scss';
+import { RecoilRoot } from 'recoil';
+import 'pages/home/Home.module.scss';
+import App from 'App';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Index />
+    <RecoilRoot>
+      <App />
+    </RecoilRoot>
   </React.StrictMode>
 );
 

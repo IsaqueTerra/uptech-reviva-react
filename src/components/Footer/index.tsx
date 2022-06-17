@@ -1,7 +1,7 @@
 import Logo from "../Logo"
 import ContactList from "./Contact_List"
 import MenuFooter from "./Menu"
-import SignUp from "./SignUp"
+import SignUp from "./SignUpNewsletter"
 import SocialNetwork from "./Social_Network"
 import styles from "./Footer.module.scss"
 

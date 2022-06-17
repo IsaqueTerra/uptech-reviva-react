@@ -1,0 +1,36 @@
+@import 'styles/global.scss';
+
+.content {
+    box-sizing: border-box;
+    margin: auto;
+    max-width: $extra-extra-large;
+    padding: 0 4.2em;
+    position: relative;
+
+    @media screen and (max-width: $medium) {
+        padding: 2em;
+    }
+}
+
+.content_cart {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+
+    @media screen and(max-width: $large) {
+        width: 100%;
+    }
+
+    @media screen and(max-width: $medium) {
+        justify-content: flex-start;
+    }
+}
+
+
+
+.cart_title {
+    font-size: 2.5em;
+    margin: .5em 0;
+}

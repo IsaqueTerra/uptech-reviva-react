@@ -1,0 +1,70 @@
+@import 'styles/global.scss';
+
+.footer_newsletter {
+    align-content: flex-start;
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: newsletter;
+    justify-content: space-between;
+    justify-self: end;
+    list-style: none;
+    padding: 0;
+    width: 90%;
+
+    @media screen and (max-width: $large) {
+        justify-content: center;
+        justify-self: center;
+    }
+}
+
+.newsletter_label {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: .5em;
+
+    @media screen and (max-width: $large) {
+        margin: 0;
+    }
+}
+
+.newsletter_input {
+    border: none;
+    box-sizing: border-box;
+    font-size: 1.7em;
+    height: 2em;
+    padding: 0 .5em;
+    width: 65%;
+
+    @media screen and (max-width: $large) {
+        margin: 0;
+        width: 20em;
+    }
+
+    @media screen and (max-width: $medium) {
+        width: 85%;
+    }
+}
+
+.newsletter_button {
+    background-color: $tertiary-color;
+    border: none;
+    color: $primary-color-negative;
+    font-size: 1.4em;
+    margin-left: .2em;
+    width: 33%;
+
+    &:hover {
+        background-color: $secondary-color;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: $large) {
+        height: 2em;
+        margin: .3em auto;
+    }
+
+    @media screen and (max-width: $medium) {
+        height: max-content;
+    }
+}
