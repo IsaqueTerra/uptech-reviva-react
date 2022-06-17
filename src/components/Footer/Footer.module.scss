@@ -37,18 +37,6 @@
     }
 }
 
-.footer_logo {
-    color: inherit;
-    grid-area: logo;
-    text-align: end;
-    text-decoration: none;
-    width: 25.4em;
-
-    @media screen and (max-width: $large) {
-        margin: auto;
-    }
-}
-
 .base-footer {
     background-color: $primary-color;
 }

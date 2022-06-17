@@ -1,12 +1,14 @@
 @import 'styles/global.scss';
 
-.header_logo {
+.container_logo {
     color: inherit;
+    grid-area: logo;
     text-align: end;
     text-decoration: none;
+    width: 25.4em;
 
-    @media screen and (max-width: $small) {
-        font-size: .8em;
+    @media screen and (max-width: $large) {
+        margin: auto;
     }
 }
 

@@ -2,6 +2,7 @@ import { useRecoilValue } from 'recoil';
 import { IProducts } from 'data';
 import { cartListState } from 'state/atoms';
 import styles from './Subtotal.module.scss'
+import { Link } from 'react-router-dom';
 
 interface ISubtotal {
     product: IProducts,
@@ -30,7 +31,7 @@ const Subtotal = ({ product }: ISubtotal) => {
                     </p>
                 }
             })}
-            <a href="#" className={styles.checkout_button}>Ir para pagamento</a>
+            <Link to="#" className={styles.checkout_button}>Ir para pagamento</Link>
         </div>
     )
 }

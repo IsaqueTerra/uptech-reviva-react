@@ -9,9 +9,7 @@ const Footer = () => {
     return (
         <footer className={styles["base-footer"]}>
             <section className={styles.footer}>
-                <a href="index.html" className={styles.footer_logo}>
-                    <Logo />
-                </a>
+                <Logo />
                 <MenuFooter />
                 <SocialNetwork />
                 <ContactList />

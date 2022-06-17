@@ -48,7 +48,8 @@ const ProductCart = (product: IProducts) => {
             <ProductFeatures title="Tamanho escolhido">
                 <Sizes
                     id={product.id}
-                    listSizes={product.size_avaliable} />
+                    listSizes={product.size_avaliable}
+                />
             </ProductFeatures>
             <ProductFeatures title="Valor">
                 <p className={styles.value}>R$ {product.price.toFixed(2)}</p>
@@ -64,7 +65,8 @@ const ProductCart = (product: IProducts) => {
                         }
                         setUpdateInInventary(Number(event.target.value));
                         setUpdateQtyCart(Number(event.target.value));
-                    }} />
+                    }}
+                />
             </ProductFeatures>
             <ProductFeatures title="Subtotal">
                 <p className={styles.subtotal}>R$ {(product.price * value!).toFixed(2)}</p>
