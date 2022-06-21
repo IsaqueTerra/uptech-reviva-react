@@ -1,14 +1,7 @@
-import CartMain from "components/Cart"
-import PageTemplate from "pages/templates"
+import CartMain from "components/Cart";
 
 const Cart = () => {
-    return (
-        <>
-            <PageTemplate title="Cart">
-                <CartMain />
-            </PageTemplate>
-        </>
-    )
-}
+  return <CartMain />;
+};
 
-export default Cart
+export default Cart;

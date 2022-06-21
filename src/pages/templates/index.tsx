@@ -1,22 +1,31 @@
-import Footer from "components/Footer"
-import Header from "components/Header"
+import Footer from "components/Footer";
+import Header from "components/Header";
 import Menu from "components/Menu";
-import ContainerSearch from "components/Search"
+import ContainerSearch from "components/Search";
+import styled from "styled-components";
+import theme from "styles/global";
 interface IPageTemplate {
-    title: string
-    children: React.ReactNode
+  children: React.ReactNode;
+  title: string;
 }
+
+const Container = styled.div`
+  box-sizing: border-box;
+  margin: auto;
+  max-width: ${theme.breackpoints.xxl};
+  padding: 0 4em;
+  position: relative;
+`;
 
 const PageTemplate = ({ title, children }: IPageTemplate) => {
-    return (
-        <>
-            <Header />
-            <Menu />
-            <ContainerSearch />
-                {children}
-            <Footer />
-        </>
-    )
-}
-
-export default PageTemplate
+  return (
+    <>
+      <Header />
+      <Menu />
+      <ContainerSearch />
+      <Container>{children}</Container>
+      <Footer />
+    </>
+  );
+};
+export default PageTemplate;

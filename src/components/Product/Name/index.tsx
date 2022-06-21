@@ -1,11 +1,25 @@
-import styles from './Name.module.scss'
+import styled from "styled-components";
+import theme from "styles/global";
 
-const Name = ({ name }: { name: string }) =>
-(
-      <h4 className={styles.especification_name}>{name}</h4>
-)
+const EspecificationName = styled.h4`
+  font-weight: 400;
+  height: 3.5em;
+  margin: 0.3em 0;
+  overflow: hidden;
 
+  @media screen and (max-width: ${theme.breackpoints.xxl}) {
+    font-size: 0.9em;
+  }
 
-export default Name
+  @media screen and (max-width: ${theme.breackpoints.lg}) {
+    font-size: 0.8em;
+  }
+`;
 
+const Name = ({ name }: { name: string }) => (
+  <EspecificationName>
+    {name}
+  </EspecificationName>
+);
 
+export default Name;
