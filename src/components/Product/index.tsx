@@ -60,10 +60,11 @@ const WrapperProduct = styled.div`
   @media screen and (max-width: ${theme.breackpoints.md}) {
     margin: 5em auto 0 auto;
     width: 45%;
+
   }
 
   @media screen and (max-width: ${theme.breackpoints.lg}) {
-    width: 100%;
+    width: 45%;
   }
 `;
 
@@ -73,7 +74,8 @@ export const findItemById = (list: IProducts[], id: number) =>
 const Product = (product: IProducts) => {
   const [cartList, setCartList] = useRecoilState(cartListState);
   const [inventoryList, setInventoryList] = useRecoilState(inventoryState);
-  const newProduct = JSON.parse(JSON.stringify(product));
+
+  const newProduct = {...product};
   const newCartList = JSON.parse(JSON.stringify(cartList));
   const newInventoryList = JSON.parse(JSON.stringify(inventoryList));
 
@@ -118,10 +120,6 @@ const Product = (product: IProducts) => {
     }
   };
 
-  const classButton = condition
-    ? "content_back-button"
-    : "content_back-button--unavailable";
-
   return (
     <WrapperProduct>
       <Sizes id={product.id} listSizes={product.size_avaliable} />
@@ -131,6 +129,7 @@ const Product = (product: IProducts) => {
         <Price price={product.price} />
       </ProductsEspecification>
       <Button
+        unvaliable={!condition}
         onClick={() => {
           addProductToCart();
           decreaseProductToInventary();

@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import theme from "styles/global";
 
-const ContainerLogo = styled(Link)`
+export const ContainerLogo = styled(Link)`
   color: inherit;
   grid-area: logo;
   text-align: end;
   text-decoration: none;
   width: 25.4em;
 
-  @media screen and (max-width: $large) {
-    margin: auto;
+  @media screen and (max-width: ${theme.breackpoints.sm}) {
+    font-size: .8em;
   }
 `;
 

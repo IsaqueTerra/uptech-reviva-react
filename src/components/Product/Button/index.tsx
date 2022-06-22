@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import theme from "styles/global";
 
 const ButtonBagContent = styled.div`
@@ -31,7 +31,7 @@ const ContentFrontButton = styled.div`
   box-shadow: 0 0 15px #00000036;
   box-sizing: border-box;
   display: flex;
-  height: 100%;
+  height: 5em;
   justify-content: center;
   position: absolute;
   width: 100%;
@@ -39,26 +39,38 @@ const ContentFrontButton = styled.div`
   &:hover {
     cursor: pointer;
   }
+
+  @media screen and (max-width: ${theme.breackpoints.sm}) {
+    background-size: 2em;
+    font-size: 0.8em;
+  }
 `;
 
-const ContentBackButton = styled(ContentFrontButton)`
+interface ContentBackButtonProps {
+  unvaliable: boolean;
+}
+
+const ContentBackButton = styled(ContentFrontButton)<ContentBackButtonProps>`
   background: no-repeat center ${theme.colors.quaternary}
     url(../../icons/check-solid.svg);
   color: ${theme.colorsNegative.primary};
   transform: rotateY(180deg);
-  &:focus{
+
+  &:focus {
     background: no-repeat center #008844 url(../../icons/check-solid-white.svg);
   }
-`;
 
-const BackButtonUnavailable = styled(ContentBackButton)`
-  background-image: none;
+  ${({ unvaliable }) =>
+    unvaliable &&
+    css`
+      background-image: none;
 
-  &::before {
-    content: "Quantidade Indisponível";
-    color: ${theme.colors.quaternary};
-    font-size: 1.2em;
-  }
+      &::before {
+        content: "Quantidade Indisponível";
+        color: ${theme.colors.quinary};
+        font-size: 1.5em;
+      }
+    `}
 `;
 
 const ButtonBag = styled.button`
@@ -73,18 +85,18 @@ const ButtonBag = styled.button`
 `;
 interface IButton {
   children: React.ReactNode;
-  classItem?: string;
+  unvaliable?: boolean;
   onClick?: () => void;
   style?: React.CSSProperties;
 }
 
-const Button = ({ children, classItem, onClick, style }: IButton) => (
+const Button = ({ children, unvaliable, onClick, style }: IButton) => (
   <ProductButtonBag style={style} onClick={onClick}>
     <ButtonBagContent>
       <ContentFrontButton>
         <ButtonBag>{children}</ButtonBag>
       </ContentFrontButton>
-      <ContentBackButton  ></ContentBackButton>
+      <ContentBackButton unvaliable={unvaliable!}></ContentBackButton>
     </ButtonBagContent>
   </ProductButtonBag>
 );

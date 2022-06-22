@@ -47,10 +47,10 @@ const Icons = styled.img`
 
 const SocialNetwork = () => {
   const linkSocialNetworks = [
-    { href: "#", src: "icons/logo-facebook.svg", alt: "facebook" },
-    { href: "#", src: "icons/logo-twitter.svg", alt: "twitter" },
-    { href: "#", src: "icons/logo-instagram.svg", alt: "instagram" },
-    { href: "#", src: "icons/logo-youtube.svg", alt: "youtube" },
+    { href: "#", src: "../../icons/logo-facebook.svg", alt: "facebook" },
+    { href: "#", src: "../../icons/logo-twitter.svg", alt: "twitter" },
+    { href: "#", src: "../../icons/logo-instagram.svg", alt: "instagram" },
+    { href: "#", src: "../../icons/logo-youtube.svg", alt: "youtube" },
   ];
 
   return (
@@ -59,8 +59,8 @@ const SocialNetwork = () => {
       <NetworkSocialListIcons>
         {linkSocialNetworks.map((link, index) => {
           return (
-            <li>
-              <a href={link.href} key={index}>
+            <li key={index}>
+              <a href={link.href}>
                 <Icons src={link.src} alt={link.alt} />
               </a>
             </li>

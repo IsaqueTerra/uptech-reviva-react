@@ -1,8 +1,12 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import theme from "styles/global";
 
-const FooterContacts = styled.ul`
-  grid-area: contact;
+interface FooterLinksProps {
+  gridArea?: string;
+}
+
+const FooterLinks = styled.ul<FooterLinksProps>`
+  grid-area: ${(props) => props.gridArea};
   justify-self: center;
   list-style: none;
   margin: 0;
@@ -20,64 +24,58 @@ const FooterContacts = styled.ul`
   }
 `;
 
-const ContactsItem = styled.li`
+const LinksItem = styled.li`
   font-size: 1.8em;
   margin: 0 0 0.7em 0;
 `;
+interface LinkProps {
+  urlIcon?: string;
+}
 
-const ContactsLink = styled.a`
+const Link = styled.a<LinkProps>`
   color: inherit;
   text-decoration: none;
-
+  
   &:hover {
     font-weight: bold;
   }
-`;
 
-const ContactsLinkWhats = styled(ContactsLink)`
-  &::after {
-    background: center/100% url(../../icons/logo-whats.svg);
-    content: "";
-    display: inline-block;
-    height: 0.8em;
-    margin: 0 0.2em;
-    width: 0.8em;
-  }
+  ${({ urlIcon }) => urlIcon  &&  css`
+    &::after {
+      background: center/100% url(${urlIcon}) no-repeat;
+      content: "";
+      display: inline-block;
+      height: 0.8em;
+      margin: 0 0.2em;
+      width: 0.8em;
+    }
+  `}
 `;
+interface ILinkList {
+  href: string;
+  content: string;
+  urlIcon?: string;
+}
 
-const ContactsLinkTel = styled(ContactsLink)`
-  &::after {
-    background: center/100% url(../../icons/logo-tel.svg);
-    content: "";
-    display: inline-block;
-    height: 0.8em;
-    margin: 0 0.2em;
-    width: 0.8em;
-  }
-`;
+interface ListLinkProps {
+  listLink: ILinkList[];
+  title?: string;
+  gridArea?: string;
+}
 
-const ContactList = () => {
+const ListLink = ({ listLink, title, gridArea }: ListLinkProps) => {
   return (
-    <FooterContacts>
-      <ContactsItem>Entre em contato</ContactsItem>
-      <ContactsItem>
-        <ContactsLink href="#">Contato</ContactsLink>
-      </ContactsItem>
-      <ContactsItem>
-        <ContactsLink href="mailto:reviva@rchlo.com.br?">
-          reviva@rchlo.com.br
-        </ContactsLink>
-      </ContactsItem>
-      <ContactsItem>
-        <ContactsLinkWhats href="https://web.whatsapp.com/send?phone=#############">
-          WhatsApp
-        </ContactsLinkWhats>
-      </ContactsItem>
-      <ContactsItem>
-        <ContactsLinkTel href="tel:+551121233321">11 2123-3321</ContactsLinkTel>
-      </ContactsItem>
-    </FooterContacts>
+    <FooterLinks gridArea={gridArea}>
+      <LinksItem>{title}</LinksItem>
+      {listLink.map(({ href, content, urlIcon }, index) => (
+        <LinksItem key={index}>
+          <Link href={href} urlIcon={urlIcon}>
+            {content}
+          </Link>
+        </LinksItem>
+      ))}
+    </FooterLinks>
   );
 };
 
-export default ContactList;
+export default ListLink;

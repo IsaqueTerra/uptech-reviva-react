@@ -1,10 +1,10 @@
 import Logo from "../Logo";
-import ContactList from "./Contact_List";
-import MenuFooter from "./Menu";
-import SignUp from "./SignUpNewsletter";
 import SocialNetwork from "./Social_Network";
 import styled from "styled-components";
 import theme from "styles/global";
+import { linksMenuNavigation, listContacts } from "./data";
+import SignUpNewsletter from "./SignUpNewsletter";
+import ListLink from "./Contact_List";
 
 const FooterStyle = styled.footer`
   background-color: ${theme.colors.primary};
@@ -47,15 +47,25 @@ const BaseFooter = styled.section`
   background-color: ${theme.colors.primary};
 `;
 
+const WrapperLogoFooter = styled.div`
+    grid-area: logo;
+    display: flex;
+  @media screen and (max-width: ${theme.breackpoints.lg}) {
+    margin: auto;
+  }
+`;
+
 const Footer = () => {
   return (
     <BaseFooter>
       <FooterStyle>
-        <Logo />
-        <MenuFooter />
+        <WrapperLogoFooter>
+          <Logo />
+        </WrapperLogoFooter>
+        <ListLink title="Menu" listLink={linksMenuNavigation} gridArea="menu" />
         <SocialNetwork />
-        <ContactList />
-        <SignUp />
+        <ListLink title="Entre em contato" listLink={listContacts} />
+        <SignUpNewsletter />
       </FooterStyle>
     </BaseFooter>
   );

@@ -15,6 +15,11 @@ const Container = styled.div`
   max-width: ${theme.breackpoints.xxl};
   padding: 0 4em;
   position: relative;
+
+  @media screen and (max-width: ${theme.breackpoints.lg}) {
+    padding: 0 1em;
+    margin: auto;
+  }
 `;
 
 const PageTemplate = ({ title, children }: IPageTemplate) => {

@@ -34,12 +34,14 @@ const NewsletterInput = styled.input`
   box-sizing: border-box;
   font-size: 1.7em;
   height: 2em;
+  outline: none;
   padding: 0 0.5em;
   width: 65%;
 
   @media screen and (max-width: ${theme.breackpoints.lg}) {
     margin: 0;
     width: 20em;
+    border-radius: 5px;
   }
 
   @media screen and (max-width: ${theme.breackpoints.md}) {
@@ -61,12 +63,9 @@ const NewsletterButton = styled.button`
   }
 
   @media screen and (max-width: ${theme.breackpoints.lg}) {
-    height: 2em;
+    border-radius: 5px;
+    height: 2.5em;
     margin: 0.3em auto;
-  }
-
-  @media screen and (max-width: ${theme.breackpoints.md}) {
-    height: max-content;
   }
 `;
 

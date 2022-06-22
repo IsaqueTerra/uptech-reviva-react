@@ -21,16 +21,21 @@ const ContainerDetails = styled.section`
     "image size"
     "image button";
   grid-template-columns: 35% calc(65% - 2em);
-  grid-template-rows: auto auto auto auto auto;
+  grid-template-rows: 8% auto auto auto auto;
   margin: 5.2em auto;
-  width: ${theme.breackpoints.xxl};
 
-  @media screen and(max-width: ${theme.breackpoints.xl}) {
-    grid-template-columns: 40% 60%;
-    grid-template-rows: 10% 30% 35% 13% 10%;
+  @media (max-width: ${theme.breackpoints.xl}) {
+    font-size: 1em;
+    grid-template-columns: 40% 55%;
+    grid-template-rows: 8% auto auto auto auto;
   }
 
-  @media screen and(max-width: ${theme.breackpoints.lg}) {
+  @media (max-width: ${theme.breackpoints.lg}) {
+    font-size: 0.8em;
+  }
+
+  @media (max-width: ${theme.breackpoints.md}) {
+    font-size: 0.8em;
     grid-template-areas:
       "image title"
       "image description"
@@ -38,11 +43,11 @@ const ContainerDetails = styled.section`
       "size size"
       "button button";
     grid-template-columns: 40% 60%;
-    grid-template-rows: 6em auto 30% 5% 10%;
+    grid-template-rows: 12% auto auto auto auto;
     row-gap: 1em;
   }
 
-  @media screen and(max-width: ${theme.breackpoints.md}) {
+  @media (max-width: ${theme.breackpoints.sm}) {
     grid-template-areas:
       "image"
       "title"
@@ -51,10 +56,9 @@ const ContainerDetails = styled.section`
       "size"
       "button";
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, auto);
-    margin: 0;
+    grid-template-rows: repeat(5, auto) 5em;
+    margin: auto;
     row-gap: 1em;
-    width: 100%;
   }
 `;
 
@@ -86,7 +90,29 @@ const DetailsImages = styled.div`
   grid-area: products;
   height: auto;
   justify-content: space-between;
-  width: 100%;
+  width: calc(100% - 2em);
+`;
+
+const WrapperDetailsSizes = styled.div`
+  grid-area: size;
+  justify-self: "flex-start";
+  align-self: "center";
+  @media (max-width: ${theme.breackpoints.sm}) {
+    font-size: 1.5em;
+  }
+`;
+
+const WrapperDetailsButton = styled.div`
+  align-self: flex-end;
+  grid-area: button;
+  height: 5em;
+  width: 250px;
+  
+  @media (max-width: ${theme.breackpoints.sm}) {
+    font-size: 1.5em;
+    height: 4em;
+    width: 100%;
+  }
 `;
 
 interface IDetailsProps {
@@ -142,25 +168,12 @@ const Details = ({ product }: IDetailsProps) => {
             onClick={() => updateStateListImages(4)}
           />
         </DetailsImages>
-        <Sizes
-          id={product.id}
-          listSizes={product.size_avaliable}
-          style={{
-            gridArea: "size",
-            justifySelf: "flex-start",
-            alignSelf: "center",
-          }}
-        />
-        <Button
-          classItem="content_back-button"
-          style={{
-            width: "250px",
-            height: "5em",
-            alignSelf: "flex-end",
-          }}
-        >
-          POR NA SACOLA
-        </Button>
+        <WrapperDetailsSizes>
+          <Sizes id={product.id} listSizes={product.size_avaliable} />
+        </WrapperDetailsSizes>
+        <WrapperDetailsButton>
+          <Button>POR NA SACOLA</Button>
+        </WrapperDetailsButton>
       </ContainerDetails>
       <Banner />
       <ProductList

@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import styled from "styled-components";
+import theme from "styles/global";
 
 const ProductSize = styled.div`
   display: flex;
@@ -10,17 +11,12 @@ const ProductSize = styled.div`
   margin: 0 0.5em 0 0;
   padding: 0;
   text-align: center;
-  z-index: 999;
-`;
+  z-index: 9;
 
-const SizeInput = styled.input`
-  display: none;
-
-  &:checked + .size_label {
-    background-color: black;
-    border: solid 1px $color-details;
-    color: $primary-color-negative;
-    font-weight: bold;
+  @media screen and (max-width: ${theme.breackpoints.sm}) {
+    font-size: 1.3em;
+    align-self: flex-end;
+    margin: 0 .5em .5em 0;
   }
 `;
 
@@ -43,17 +39,26 @@ const SizeLabel = styled.label`
   }
 `;
 
+const SizeInput = styled.input`
+  display: none;
+
+  &:checked + ${SizeLabel} {
+    background-color: black;
+    border: solid 1px ${theme.colors.quaternary};
+    color: ${theme.colorsNegative.primary};
+    font-weight: bold;
+  }
+`;
+
 const Sizes = ({
   id,
   listSizes,
-  style,
 }: {
   id: number;
   listSizes: string[];
-  style?: React.CSSProperties;
 }) => {
   return (
-    <ProductSize style={style}>
+    <ProductSize>
       {listSizes.map((size: string, index) => (
         <Fragment key={listSizes[index]}>
           <SizeInput
@@ -61,11 +66,7 @@ const Sizes = ({
             id={`size-${size}-` + id}
             name={`size_model-` + id}
           />
-          <SizeLabel
-            htmlFor={`size-${size}-` + id}
-          >
-            {size}
-          </SizeLabel>
+          <SizeLabel htmlFor={`size-${size}-` + id}>{size}</SizeLabel>
         </Fragment>
       ))}
     </ProductSize>

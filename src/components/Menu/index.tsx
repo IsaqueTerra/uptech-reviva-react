@@ -1,6 +1,5 @@
-import classNames from "classnames";
 import { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import theme from "styles/global";
 import ButtonMobile from "./ButtonMobile";
 
@@ -14,7 +13,11 @@ const MenuNavegation = styled.nav`
   }
 `;
 
-const MenuNavegationItems = styled.ul`
+interface MenuNavegationProps {
+  isOpen: boolean;
+}
+
+const MenuNavegationItems = styled.ul<MenuNavegationProps>`
   align-items: center;
   display: flex;
   font-size: 1.8em;
@@ -32,7 +35,7 @@ const MenuNavegationItems = styled.ul`
     font-size: 1.6em;
     flex-direction: column;
     height: 50vh;
-    left: -100vw;
+    left: -100vh;
     line-height: 1.5em;
     margin-top: 3.2em;
     padding: 0 2em;
@@ -40,11 +43,13 @@ const MenuNavegationItems = styled.ul`
     text-align: center;
     transition: 0.5s all;
     width: 40%;
-    z-index: 999;
-  }
+    z-index: 99;
 
-  @media screen and (max-width: ${theme.breackpoints.md}) {
-    left: 0;
+    ${({ isOpen }) =>
+      isOpen &&
+      css`
+        left: 0vh;
+      `}
   }
 `;
 
@@ -64,25 +69,24 @@ const ItemLink = styled.a`
 
 const Menu = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const listLink = [
+    { href: "#", content: "Página Inicial" },
+    { href: "#", content: "Moda Masculina" },
+    { href: "#", content: "Moda Feminina" },
+    { href: "#", content: "Moda Infantíl" },
+    { href: "#", content: "Manual de Moda" },
+  ];
   return (
     <MenuNavegation>
       <ButtonMobile onClick={() => setOpenMenu(!openMenu)} />
-      <MenuNavegationItems>
-        <li>
-          <ItemLink href="#">Página Inicial</ItemLink>
-        </li>
-        <li>
-          <ItemLink href="#">Moda Masculina</ItemLink>
-        </li>
-        <li>
-          <ItemLink href="#">Moda Feminina</ItemLink>
-        </li>
-        <li>
-          <ItemLink href="#">Moda Infantíl</ItemLink>
-        </li>
-        <li>
-          <ItemLink href="#">Manual de Moda</ItemLink>
-        </li>
+      <MenuNavegationItems isOpen={openMenu}>
+        {listLink.map((link, index) => {
+          return (
+            <li key={index}>
+              <ItemLink href={link.href}>{link.content}</ItemLink>
+            </li>
+          );
+        })}
       </MenuNavegationItems>
     </MenuNavegation>
   );
