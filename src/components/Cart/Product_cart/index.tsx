@@ -16,12 +16,12 @@ const CartProduct = styled.section`
   grid-template-rows: 200px 20em;
   height: 22em;
 
-  @media screen and(max-width: ${theme.breackpoints.xl}) {
+  @media (max-width: ${theme.breackpoints.xl}) {
     column-gap: 1em;
     grid-template-columns: 160px 19% 17% 8% 10em 10%;
   }
 
-  @media screen and(max-width: ${theme.breackpoints.md}) {
+  @media (max-width: ${theme.breackpoints.md}) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
@@ -34,7 +34,7 @@ const CartProduct = styled.section`
     margin: 1em 0;
   }
 
-  @media screen and(max-width: ${theme.breackpoints.sm}) {
+  @media (max-width: ${theme.breackpoints.sm}) {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto auto;
     grid-template-areas: "image ";
@@ -59,7 +59,7 @@ const Quantity = styled.input`
   margin: 0.2em auto;
   text-align: center;
   width: 3em;
-  @media screen and(max-width: ${theme.breackpoints.md}) {
+  @media (max-width: ${theme.breackpoints.md}) {
     margin: 0.2em 0;
   }
 `;
@@ -67,6 +67,10 @@ const Quantity = styled.input`
 const Subtotal = styled.p`
   font-size: 1.5em;
   margin: 0.2em 0;
+`;
+
+const WrapperSize = styled.div`
+  display: flex;
 `;
 
 const ProductCart = (product: IProducts) => {
@@ -114,7 +118,9 @@ const ProductCart = (product: IProducts) => {
         <Description>{product.name}</Description>
       </ProductFeatures>
       <ProductFeatures title="Tamanho escolhido">
-        <Sizes id={product.id} listSizes={product.size_avaliable} />
+        <WrapperSize>
+          <Sizes id={product.id} listSizes={product.size_avaliable} />
+        </WrapperSize>
       </ProductFeatures>
       <ProductFeatures title="Valor">
         <Value>R$ {product.price.toFixed(2)}</Value>
@@ -124,6 +130,7 @@ const ProductCart = (product: IProducts) => {
           id={(3).toString()}
           type="number"
           max={product.quantity_avaliable}
+          min={1}
           value={product.items_cart}
           onChange={(event) => {
             if (Number(event.target.value) > product.quantity_avaliable) {

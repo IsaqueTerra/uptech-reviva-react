@@ -23,7 +23,7 @@ const CartCheckout = styled.div`
   text-align: center;
   width: 20%;
 
-  @media screen and(max-width: ${theme.breackpoints.lg}) {
+  @media (max-width: ${theme.breackpoints.lg}) {
     margin: 0;
     position: relative;
     width: 100%;
@@ -34,7 +34,7 @@ const CheckoutTotal = styled.p`
   margin-top: 0;
   word-spacing: 20;
 
-  @media screen and(max-width: ${theme.breackpoints.lg}) {
+  @media (max-width: ${theme.breackpoints.lg}) {
     font-size: 1.2em;
   }
 `;
@@ -58,11 +58,8 @@ const CheckoutButton = styled(Link)`
   }
 `;
 
-interface ISubtotal {
-  product: IProducts;
-}
 
-const Subtotal = ({ product }: ISubtotal) => {
+const Subtotal = () => {
   const cartList: IProducts[] = useRecoilValue(cartListState);
 
   const calculatesSubtotal = (list: IProducts[]) => {
