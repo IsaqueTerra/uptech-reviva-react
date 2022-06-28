@@ -1,19 +1,27 @@
-import { ReactNode } from 'react'
-import Caption from '../Product/Caption'
-import styles from './ContainerProducts.module.scss'
+import { ReactNode } from "react";
+import styled from "styled-components";
+import theme from "styles/global";
+import Caption from "../Product/Caption";
 
+const ContentProduct = styled.section`
+  display: flex;
+
+  @media screen and (max-width: ${theme.breackpoints.md}) {
+    flex-wrap: wrap;
+  }
+`;
 interface IContentProducts {
-    children: ReactNode
-    title: string
+  children: ReactNode;
+  title: string;
 }
 
 const ContentProducts = (props: IContentProducts) => {
-    return (
-        <section className={styles.content_products}>
-            <Caption>{props.title}</Caption>
-            {props.children}
-        </section>
-    )
-}
+  return (
+    <ContentProduct>
+      <Caption>{props.title}</Caption>
+      {props.children}
+    </ContentProduct>
+  );
+};
 
-export default ContentProducts
+export default ContentProducts;

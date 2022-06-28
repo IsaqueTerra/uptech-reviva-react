@@ -1,18 +1,27 @@
-import React, { Children } from 'react'
-import styles from './ProductFeatures.module.scss'
+import React, { Children } from "react";
+import styled from "styled-components";
 
+const ProductFeature = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const FeaturesTitle = styled.h2`
+  margin: 0;
+  font-size: 1.8em;
+`;
 interface IProductFeatures {
-    title: string,
-    children: React.ReactNode
+  title: string;
+  children: React.ReactNode;
 }
 
 const ProductFeatures = ({ title, children }: IProductFeatures) => {
-    return (
-        <div className={styles.product_features}>
-            <h2 className={styles.features_title}>{title}</h2>
-            {children}
-        </div>
-    )
-}
+  return (
+    <ProductFeature>
+      <FeaturesTitle>{title}</FeaturesTitle>
+      {children}
+    </ProductFeature>
+  );
+};
 
-export default ProductFeatures
+export default ProductFeatures;

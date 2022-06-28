@@ -1,17 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { RecoilRoot } from 'recoil';
-import 'pages/home/Home.module.scss';
-import App from 'App';
-
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { RecoilRoot } from "recoil";
+import AppRouter from "route";
+import { GlobalStyle } from "./styles/global";
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
+    <GlobalStyle />
     <RecoilRoot>
-      <App />
+      <AppRouter />
     </RecoilRoot>
   </React.StrictMode>
 );
-

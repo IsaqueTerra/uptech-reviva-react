@@ -1,19 +1,42 @@
-import React from 'react'
-import ContainerSearch from '../Search'
-import styles from './Cart.module.scss'
-import ProductListSection from './Product_cart/ProductListSection'
-import ListSubtotal from './Subtotal/ListSubtotal'
+import { useRecoilValue } from "recoil";
+import { cartListState } from "state/atoms";
+import styled from "styled-components";
+import theme from "styles/global";
+import ProductListSection from "./Product_cart/ProductListSection";
+import Subtotal from "./Subtotal";
+
+const ContentCart = styled.section`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+
+  @media (max-width: ${theme.breackpoints.lg}) {
+    width: 100%;
+  }
+
+  @media (max-width: ${theme.breackpoints.md}) {
+    justify-content: flex-start;
+  }
+`;
+
+const CarTitle = styled.h1`
+  font-size: 2.5em;
+  margin: 0.5em 0;
+`;
 
 const CartMain = () => {
-    return (
-        <main className={styles.content}>
-            <section className={styles.content_cart}>
-                <h1 className={styles.cart_title}>Minha Sacola</h1>
-                <ProductListSection />
-                <ListSubtotal />
-            </section>
-        </main>
-    )
-}
+  const cartList = useRecoilValue(cartListState);
+  const containsInCart = cartList.length !== 0 ;
+  
+  return (
+    <ContentCart>
+      <CarTitle>Minha Sacola</CarTitle>
+      <ProductListSection />
+      {containsInCart && <Subtotal />}
+    </ContentCart>
+  );
+};
 
-export default CartMain
+export default CartMain;

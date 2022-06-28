@@ -1,9 +1,19 @@
-import styles from './Price.module.scss'
+import styled from "styled-components";
+import theme from "styles/global";
 
-const Price = ({ price }: { price: number }) =>
-(
-      <p className={styles.especification_value}>R$ {price.toFixed(2)}</p>
-)
+const EspecificationValue = styled.p`
+  font-family: "Franklin Gothic Medium";
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0 0 0.5em 0;
 
+  @media screen and (max-width: ${theme.breackpoints.sm}) {
+    font-size: 1em;
+  }
+`;
 
-export default Price
+const Price = ({ price }: { price: number }) => (
+  <EspecificationValue>R$ {price.toFixed(2)}</EspecificationValue>
+);
+
+export default Price;

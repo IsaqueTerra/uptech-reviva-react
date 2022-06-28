@@ -1,5 +1,5 @@
 import { atom, RecoilState } from "recoil";
-import { IProducts } from "data";
+import { IProducts } from "contracts";
 
 export const inventoryState: RecoilState<IProducts[]> = atom({
     key: 'InventoryState',
@@ -15,7 +15,9 @@ export const inventoryState: RecoilState<IProducts[]> = atom({
         images: [
             { url: '../../images/product-1/img1.jpg', description: 'Modelo com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' },
             { url: '../../images/product-1/img2.jpg', description: 'Modelo com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' },
-            { url: '../../images/product-1/img3.jpg', description: 'Modelo de Costas com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' }
+            { url: '../../images/product-1/img3.jpg', description: 'Modelo de Costas com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' },
+            { url: '../../images/product-1/img4.jpg', description: 'Modelo com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' },
+            { url: '../../images/product-1/img5.jpg', description: 'Modelo de Costas com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' }
         ],
     }, {
         id: 2,
@@ -29,7 +31,9 @@ export const inventoryState: RecoilState<IProducts[]> = atom({
         images: [
             { url: '../../images/product-2/img1.jpg', description: 'Modelo com Blusa Preta, Plus Size, Gola Canoa, Manga Curta, Estampa de Folhas na Cor Verde na Barra' },
             { url: '../../images/product-2/img2.jpg', description: 'Modelo com Blusa Preta, Plus Size, Gola Canoa, Manga Curta, Estampa de Folhas na Cor Verde na Barra' },
-            { url: '../../images/product-2/img3.jpg', description: 'Modelo de Costas Blusa Preta, Plus Size, Gola Canoa, Manga Curta, Estampa de Folhas na Cor Verde na Barra' }
+            { url: '../../images/product-2/img3.jpg', description: 'Modelo de Costas Blusa Preta, Plus Size, Gola Canoa, Manga Curta, Estampa de Folhas na Cor Verde na Barra' },
+            { url: '../../images/product-2/img4.jpg', description: 'Modelo com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' },
+            { url: '../../images/product-2/img5.jpg', description: 'Modelo de Costas com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' }
         ],
     }, {
         id: 3,
@@ -43,7 +47,9 @@ export const inventoryState: RecoilState<IProducts[]> = atom({
         images: [
             { url: '../../images/product-3/img1.jpg', description: 'Modelo com Blusa Verde, Plus Size, Gola Alta Redonda, Manga Longa, Sem Estampas' },
             { url: '../../images/product-3/img2.jpg', description: 'Modelo com Blusa Verde, Plus Size, Gola Alta Redonda, Manga Longa, Sem Estampas' },
-            { url: '../../images/product-3/img3.jpg', description: 'Modelo de Costas com Blusa Verde, Plus Size, Gola Alta Redonda, Manga Longa, Sem Estampas' }
+            { url: '../../images/product-3/img3.jpg', description: 'Modelo de Costas com Blusa Verde, Plus Size, Gola Alta Redonda, Manga Longa, Sem Estampas' },
+            { url: '../../images/product-3/img4.jpg', description: 'Modelo com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' },
+            { url: '../../images/product-3/img5.jpg', description: 'Modelo de Costas com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' }
         ],
     }, {
         id: 4,
@@ -57,7 +63,9 @@ export const inventoryState: RecoilState<IProducts[]> = atom({
         images: [
             { url: '../../images/product-4/img1.jpg', description: 'Modelo com Blusa na Cor Vermelho Escuro Mescla, Plus Size, Gola Redonda, Manga 7/8, Sem Estampas' },
             { url: '../../images/product-4/img2.jpg', description: 'Modelo com Blusa na Cor Vermelho Escuro Mescla, Plus Size, Gola Redonda, Manga 7/8, Sem Estampas' },
-            { url: '../../images/product-4/img3.jpg', description: 'Modelo de Costas com Blusa na Cor Vermelho Escuro Mescla, Plus Size, Gola Redonda, Manga 7/8, Sem Estampas' }
+            { url: '../../images/product-4/img3.jpg', description: 'Modelo de Costas com Blusa na Cor Vermelho Escuro Mescla, Plus Size, Gola Redonda, Manga 7/8, Sem Estampas' },
+            { url: '../../images/product-4/img4.jpg', description: 'Modelo com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' },
+            { url: '../../images/product-4/img5.jpg', description: 'Modelo de Costas com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' }
         ],
     }, {
         id: 5,
@@ -71,7 +79,9 @@ export const inventoryState: RecoilState<IProducts[]> = atom({
         images: [
             { url: '../../images/product-5/img1.jpg', description: 'Modelo com Calça Jeans Cor Denim Médio, Plus Size, 2 Bolsos Frontais e 2 Traseiros, Comprimento Cigarrete, com Lavagem' },
             { url: '../../images/product-5/img2.jpg', description: 'Modelo com Calça Jeans Cor Denim Médio, Plus Size, 2 Bolsos Frontais e 2 Traseiros, Comprimento Cigarrete, com Lavagem' },
-            { url: '../../images/product-5/img3.jpg', description: 'Modelo de Costas com Calça Jeans Cor Denim Médio, Plus Size, 2 Bolsos Frontais e 2 Traseiros, Comprimento Cigarrete, com Lavagem' }
+            { url: '../../images/product-5/img3.jpg', description: 'Modelo de Costas com Calça Jeans Cor Denim Médio, Plus Size, 2 Bolsos Frontais e 2 Traseiros, Comprimento Cigarrete, com Lavagem' },
+            { url: '../../images/product-5/img4.jpg', description: 'Modelo com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' },
+            { url: '../../images/product-5/img5.jpg', description: 'Modelo de Costas com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' }
         ],
     }, {
         id: 6,
@@ -85,7 +95,9 @@ export const inventoryState: RecoilState<IProducts[]> = atom({
         images: [
             { url: '../../images/product-6/img1.jpg', description: 'Modelo com Top Cropped Jeans, com Recorte Alça Média, Decote Princesa' },
             { url: '../../images/product-6/img2.jpg', description: 'Modelo com Top Cropped Jeans, com Recorte Alça Média, Decote Princesa' },
-            { url: '../../images/product-6/img3.jpg', description: 'Modelo de Costas com Top Cropped Jeans, com Recorte Alça Média, Decote Princesa' }
+            { url: '../../images/product-6/img3.jpg', description: 'Modelo de Costas com Top Cropped Jeans, com Recorte Alça Média, Decote Princesa' },
+            { url: '../../images/product-6/img4.jpg', description: 'Modelo com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' },
+            { url: '../../images/product-6/img5.jpg', description: 'Modelo de Costas com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' }
         ],
     }, {
         id: 7,
@@ -99,7 +111,9 @@ export const inventoryState: RecoilState<IProducts[]> = atom({
         images: [
             { url: '../../images/product-7/img1.jpg', description: 'Modelo com Top Cropped, Plus Size, com Recorte Alça Média, Decote Princesa, Estampa Abstrata Marrom' },
             { url: '../../images/product-7/img2.jpg', description: 'Modelo com Top Cropped, Plus Size, com Recorte Alça Média, Decote Princesa, Estampa Abstrata Marrom' },
-            { url: '../../images/product-7/img3.jpg', description: 'Modelo de Costas com Top Cropped, Plus Size, com Recorte Alça Média, Decote Princesa, Estampa Abstrata Marrom' }
+            { url: '../../images/product-7/img3.jpg', description: 'Modelo de Costas com Top Cropped, Plus Size, com Recorte Alça Média, Decote Princesa, Estampa Abstrata Marrom' },
+            { url: '../../images/product-7/img4.jpg', description: 'Modelo com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' },
+            { url: '../../images/product-7/img5.jpg', description: 'Modelo de Costas com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' }
         ],
     }, {
         id: 8,
@@ -113,7 +127,9 @@ export const inventoryState: RecoilState<IProducts[]> = atom({
         images: [
             { url: '../../images/product-8/img1.jpg', description: 'Modelo com Camisa, Manga Longa, Estampa Abstrata Marrom' },
             { url: '../../images/product-8/img2.jpg', description: 'Modelo com Camisa, Manga Longa, Estampa Abstrata Marrom' },
-            { url: '../../images/product-8/img3.jpg', description: 'Modelo de Costas com Camisa, Manga Longa, Estampa Abstrata Marrom' }
+            { url: '../../images/product-8/img3.jpg', description: 'Modelo de Costas com Camisa, Manga Longa, Estampa Abstrata Marrom' },
+            { url: '../../images/product-8/img4.jpg', description: 'Modelo com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' },
+            { url: '../../images/product-8/img5.jpg', description: 'Modelo de Costas com Blusa Preta, Plus Size, Gola Redonda, Manga 3/4, Pequenas Estampas de Onças na Cor Bege' }
         ],
     }],
 });
@@ -126,9 +142,4 @@ export const postListState: RecoilState<IProducts[]> = atom({
 export const cartListState: RecoilState<IProducts[]> = atom({
     key: 'CartList',
     default: [] as IProducts[]
-});
-
-export const routes: RecoilState<boolean> = atom({
-    key: 'Routes',
-    default: true
 });

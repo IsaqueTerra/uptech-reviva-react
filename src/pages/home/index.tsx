@@ -1,15 +1,7 @@
-import Main from "components/Main"
-import PageTemplate from "pages/templates"
-import { useRecoilValue } from "recoil"
-import { postListState } from "state/atoms"
+import Main from "components/Main";
 
 const Home = () => {
-   const products = useRecoilValue(postListState)
-   return (
-      <PageTemplate title="Home">
-         <Main/>
-      </PageTemplate>
-   )
-}
+  return <Main />;
+};
 
-export default Home
+export default Home;
