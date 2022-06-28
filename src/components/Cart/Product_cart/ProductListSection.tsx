@@ -1,9 +1,9 @@
-import { useRecoilValue } from "recoil";
 import ProductCart from "./index";
-import { cartListState, postListState } from "state/atoms";
+import { useContext } from "react";
+import { CartContext } from "contexts/cart.context";
 
 const ProductListSection = () => {
-  const cartList = useRecoilValue(cartListState);
+  const { cartList } = useContext(CartContext);
 
   return (
     <>

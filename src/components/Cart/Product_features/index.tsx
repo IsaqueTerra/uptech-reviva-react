@@ -1,15 +1,6 @@
-import React, { Children } from "react";
-import styled from "styled-components";
+import React from "react";
+import { FeaturesTitle, ProductFeature } from "./styles";
 
-const ProductFeature = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const FeaturesTitle = styled.h2`
-  margin: 0;
-  font-size: 1.8em;
-`;
 interface IProductFeatures {
   title: string;
   children: React.ReactNode;

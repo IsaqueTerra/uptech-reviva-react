@@ -17,6 +17,6 @@ export const linksMenuNavigation = [
   { href: "#", content: "Página Inicial" },
   { href: "#", content: "Moda Masculina" },
   { href: "#", content: "Moda Feminina" },
-  { href: "#", content: "Moda Infantíl" },
+  { href: "#", content: "Moda Infantil" },
   { href: "#", content: "Manual de Moda" },
 ];

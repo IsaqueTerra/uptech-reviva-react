@@ -5,10 +5,10 @@ export interface IProducts {
     category: string,
     price: number,
     description: string,
-    size_avaliable: string[],
-    quantity_avaliable: number,
+    size_available: string[],
+    quantity_available: number,
     images: IImagemProduto[];
-    items_cart?: number
+    items_cart: number
 }
 
 export interface IImagemProduto {
@@ -18,7 +18,7 @@ export interface IImagemProduto {
 
 export interface IInventoryState{
     id: number;
-    quantity_avaliable: number;
+    quantity_available: number;
 }
 
 export interface ICartListState{

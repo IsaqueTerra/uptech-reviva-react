@@ -1,25 +1,7 @@
-import styled from "styled-components";
-import theme from "styles/global";
-
-const EspecificationName = styled.h4`
-  font-weight: 400;
-  height: 3.5em;
-  margin: 0.3em 0;
-  overflow: hidden;
-
-  @media screen and (max-width: ${theme.breackpoints.xxl}) {
-    font-size: 0.9em;
-  }
-
-  @media screen and (max-width: ${theme.breackpoints.lg}) {
-    font-size: 0.8em;
-  }
-`;
+import { SpecificationName } from "./styles";
 
 const Name = ({ name }: { name: string }) => (
-  <EspecificationName>
-    {name}
-  </EspecificationName>
+  <SpecificationName>{name}</SpecificationName>
 );
 
 export default Name;
