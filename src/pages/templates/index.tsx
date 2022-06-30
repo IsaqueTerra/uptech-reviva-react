@@ -12,11 +12,11 @@ interface IPageTemplate {
 const Container = styled.div`
   box-sizing: border-box;
   margin: auto;
-  max-width: ${theme.breackpoints.xxl};
+  max-width: ${theme.breakpoints.xxl};
   padding: 0 4em;
   position: relative;
 
-  @media screen and (max-width: ${theme.breackpoints.lg}) {
+  @media screen and (max-width: ${theme.breakpoints.lg}) {
     padding: 0 1em;
     margin: auto;
   }

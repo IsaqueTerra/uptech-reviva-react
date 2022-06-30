@@ -1,15 +1,7 @@
 import { ReactNode } from "react";
-import styled from "styled-components";
-import theme from "styles/global";
 import Caption from "../Product/Caption";
+import { ContentProduct } from "./styles";
 
-const ContentProduct = styled.section`
-  display: flex;
-
-  @media screen and (max-width: ${theme.breackpoints.md}) {
-    flex-wrap: wrap;
-  }
-`;
 interface IContentProducts {
   children: ReactNode;
   title: string;

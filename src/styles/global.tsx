@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const theme = {
-  breackpoints: {
+  breakpoints: {
     sm: "576px",
     md: "768px",
     lg: "992px",

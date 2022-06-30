@@ -1,21 +1,21 @@
-import { useRecoilValue } from "recoil";
-import { postListState } from "state/atoms";
+import { ProductContext } from "contexts/product.context";
+import { useContext } from "react";
 import Banner from "../Banner";
 import News from "../News";
 import ProductList from "./Product_List";
 
 const Main = () => {
-  const products = useRecoilValue(postListState);
+  const { listProduct } = useContext(ProductContext);
   return (
     <>
       <ProductList
-        products={products}
+        products={listProduct}
         category="ultimos-lancamentos"
         titleBanner="Últimos lançamentos"
       />
       <Banner />
       <ProductList
-        products={products}
+        products={listProduct}
         category="colecao-verao"
         titleBanner="Últimos lançamentos"
       />
