@@ -1,13 +1,17 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import styled from "styled-components";
 import theme from "styles/global";
 
-export const ContainerLogo = styled(Link)`
+export const ContainerLogo = styled.a`
   color: inherit;
   grid-area: logo;
   text-align: end;
   text-decoration: none;
   width: 25.4em;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   @media screen and (max-width: ${theme.breakpoints.sm}) {
     font-size: 0.8em;

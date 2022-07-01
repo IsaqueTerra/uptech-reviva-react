@@ -1,5 +1,4 @@
 // import productList from "data";
-import Product from "components/Product";
 import { IProducts } from "contracts";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { ProductContext, useProductContext } from "./product.context";

@@ -6,7 +6,6 @@ import styled from "styled-components";
 import theme from "styles/global";
 interface IPageTemplate {
   children: React.ReactNode;
-  title: string;
 }
 
 const Container = styled.div`
@@ -22,7 +21,7 @@ const Container = styled.div`
   }
 `;
 
-const PageTemplate = ({ title, children }: IPageTemplate) => {
+const PageTemplate = ({ children }: IPageTemplate) => {
   return (
     <>
       <Header />

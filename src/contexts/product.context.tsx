@@ -20,7 +20,6 @@ interface ProductProviderProps {
 
 const ProductProvider = ({ children }: ProductProviderProps) => {
   const [listProduct, setListProduct] = useState(productList);
-
   return (
     <ProductContext.Provider value={{ listProduct, setListProduct }}>
       {children}

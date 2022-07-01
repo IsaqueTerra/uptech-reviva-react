@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import theme from "styles/global";
 
@@ -52,7 +52,7 @@ export const MenuNavegationItems = styled.ul<MenuNavegationProps>`
   }
 `;
 
-export const ItemLink = styled(Link)`
+export const ItemLink = styled.a`
   color: inherit;
   text-decoration: none;
 

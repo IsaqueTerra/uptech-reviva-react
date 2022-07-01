@@ -1,16 +1,18 @@
+import Link from "next/link";
 import { ContainerLogo, LogoBottom, LogoTop } from "./styles";
 
 const Logo = () => {
   return (
-    <ContainerLogo
-      to="/"
-      onClick={() => {
-        window.scrollTo(0, 0);
-      }}
-    >
-      <LogoTop>Reviva Fashion</LogoTop>
-      <LogoBottom>by RCHLO</LogoBottom>
-    </ContainerLogo>
+    <Link href="/">
+      <ContainerLogo
+        onClick={() => {
+          window.scrollTo(0, 0);
+        }}
+      >
+        <LogoTop>Reviva Fashion</LogoTop>
+        <LogoBottom>by RCHLO</LogoBottom>
+      </ContainerLogo>
+    </Link>
   );
 };
 

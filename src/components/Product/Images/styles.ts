@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import styled from "styled-components";
 import theme from "styles/global";
 
@@ -15,7 +15,7 @@ export const ProductImage = styled.img`
   }
 `;
 
-export const ProductLinkImage = styled(Link)`
+export const ProductLinkImage = styled.a`
   display: flex;
   height: 100%;
   overflow: hidden;
