@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 interface HeaderCartProps {
@@ -13,6 +12,12 @@ height: 5em;
 justify-content: flex-end;
 transition: 0.4s all;
 width: 5em;
+
+&:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 ${({ quantity_cart }) => quantity_cart && css`
   &::after{
     align-items: center;
@@ -31,7 +36,5 @@ ${({ quantity_cart }) => quantity_cart && css`
   }
 `}
 
-&:hover {
-  transform: scale(1.1);
-}
+
 `;

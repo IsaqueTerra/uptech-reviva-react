@@ -5,21 +5,20 @@ import { CarTitle, ContentCart } from "./styles";
 import Subtotal from "./Subtotal";
 
 const CartMain = () => {
-  const { cartList } = useContext(CartContext);
+  const {cartList} = useContext(CartContext);
   const containsInCart = cartList.length !== 0;
-
   return (
     <ContentCart>
       {containsInCart ? (
         <>
           <CarTitle>Minha Sacola</CarTitle>
-          <ProductListSection />
-          <Subtotal />
+          <ProductListSection cartList={cartList} />
+          <Subtotal cartList={cartList} />
         </>
       ) : (
         <CarTitle>Nenhum produto no carrinho</CarTitle>
       )}
-      {containsInCart && <Subtotal />}
+      {containsInCart && <Subtotal cartList={cartList} />}
     </ContentCart>
   );
 };

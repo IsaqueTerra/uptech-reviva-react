@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import theme from "styles/global";
 
@@ -37,7 +37,7 @@ export const CheckoutTotal = styled.li`
   }
 `;
 
-export const CheckoutButton = styled(Link)`
+export const CheckoutButton = styled.a`
   background-color: ${theme.colors.secondary};
   border: none;
   box-sizing: border-box;

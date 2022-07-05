@@ -4,12 +4,14 @@ import Images from "./Images";
 import Button from "./Button";
 import Name from "./Name";
 import Price from "./Price";
-import { useCartContext } from "contexts/cart.context";
 import { ProductsSpecification, WrapperProduct } from "./styles";
+import { useContext, useState } from "react";
+import { CartContext } from "contexts/cart.context";
+import { addInCart } from "services/cart.services";
 
 const Product = (product: IProducts) => {
-  const { addInCart } = useCartContext(product);
-
+  const { setCartList } = useContext(CartContext);
+  const [status, setStatus] = useState(false);
   return (
     <WrapperProduct>
       <Sizes id={product.id} listSizes={product.size_available} />
@@ -19,10 +21,10 @@ const Product = (product: IProducts) => {
         <Price price={product.price} />
       </ProductsSpecification>
       <Button
-        unavailable={product.quantity_available <= 0}
         onClick={() => {
-          addInCart(product);
+          addInCart(product, setCartList, setStatus);
         }}
+        unavailable={status}
       >
         POR NA SACOLA
       </Button>

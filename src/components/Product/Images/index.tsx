@@ -1,5 +1,5 @@
 import { IImagemProduto } from "contracts";
-import { Params, useParams } from "react-router-dom";
+import Link from "next/link";
 import { ProductImage, ProductLinkImage } from "./styles";
 interface IImagesProps {
   id?: number;
@@ -10,13 +10,6 @@ interface IImagesProps {
 }
 
 const Images = ({ images, position, style, id, onClick }: IImagesProps) => {
-  const parameter = useParams();
-
-  const generateUrlIfInside = (params: Readonly<Params<string>>) => {
-    return params.id ? `${id}` : `details/${id}`;
-  };
-
-  const route = generateUrlIfInside(parameter);
 
   if (position! >= 0) {
     return (
@@ -30,16 +23,18 @@ const Images = ({ images, position, style, id, onClick }: IImagesProps) => {
     );
   } else {
     return (
-      <ProductLinkImage to={route}>
-        {images.map((image) => (
-          <ProductImage
-            style={style}
-            key={image.url}
-            src={process.env.PUBLIC_URL + image.url}
-            alt={image.description}
-          />
-        ))}
-      </ProductLinkImage>
+      <Link href={`/details/${id}`}>
+        <ProductLinkImage>
+          {images.map((image) => (
+            <ProductImage
+              style={style}
+              key={image.url}
+              src={process.env.PUBLIC_URL + image.url}
+              alt={image.description}
+            />
+          ))}
+        </ProductLinkImage>
+      </Link>
     );
   }
 };

@@ -21,7 +21,6 @@ const Button = ({ children, unavailable, style, onClick }: IButton) => {
       setAddedToCart(false);
     }, 3000);
   };
-
   return (
     <ProductButtonBag data-testid="productButtonBag" style={style} onClick={onClick}>
       <ButtonBagContent

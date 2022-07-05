@@ -1,11 +1,13 @@
-import { ProductContext } from "contexts/product.context";
-import { useContext } from "react";
+import { IProducts } from "contracts";
 import Banner from "../Banner";
 import News from "../News";
 import ProductList from "./Product_List";
 
-const Main = () => {
-  const { listProduct } = useContext(ProductContext);
+interface MainProps {
+  listProduct: IProducts[];
+}
+
+const Main = ({ listProduct }: MainProps) => {
   return (
     <>
       <ProductList

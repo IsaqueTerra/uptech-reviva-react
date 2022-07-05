@@ -3,8 +3,11 @@ import { useContext } from "react";
 import { CartContext, useCartContext } from "contexts/cart.context";
 import { CartCheckout, CheckoutButton, CheckoutTotal, Price } from "./styles";
 
-const Subtotal = () => {
-  const { cartList } = useContext(CartContext);
+interface SubtotalProps {
+  cartList: IProducts[];
+}
+
+const Subtotal = ({ cartList }: SubtotalProps) => {
   const { finishPurchase } = useCartContext({} as IProducts);
   const calculatesSubtotal = (list: IProducts[]) => {
     return list
@@ -27,7 +30,7 @@ const Subtotal = () => {
           );
         }
       })}
-      <CheckoutButton onClick={finishPurchase} to="#">
+      <CheckoutButton onClick={finishPurchase} href="#">
         Ir para pagamento
       </CheckoutButton>
     </CartCheckout>
