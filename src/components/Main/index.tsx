@@ -1,6 +1,4 @@
-import { ProductContext } from "contexts/product.context";
 import { IProducts } from "contracts";
-import { useContext, useState } from "react";
 import Banner from "../Banner";
 import News from "../News";
 import ProductList from "./Product_List";
