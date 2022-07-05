@@ -1,7 +1,5 @@
-// import productList from "data";
 import { IProducts } from "contracts";
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { ProductContext, useProductContext } from "./product.context";
 
 interface ICartContext {
   cartList: IProducts[];
@@ -30,17 +28,11 @@ export default function CartProvider({ children }: CartProviderProps) {
 
 export const useCartContext = (product: IProducts) => {
   const { cartList, setCartList } = useContext(CartContext);
-  const { updateQttAvailable } = useProductContext();
   const [_, setQuantityInCart] = useState(product.items_cart);
-  const { listProduct } = useContext(ProductContext);
 
   useEffect(() => {
     setQuantityInCart(product.items_cart);
   }, [cartList]);
-
-  const indexItem = listProduct.findIndex(
-    (item: IProducts) => item.id === product.id
-  );
 
   const addInCart = (product: IProducts) => {
     const newProductInCart = { ...product };
@@ -61,11 +53,7 @@ export const useCartContext = (product: IProducts) => {
 
     if (productInCart) {
       setCartList(incrementInCart(cartList, product.id));
-    } else if (listProduct[indexItem].quantity_available > 0) {
-      newProductInCart.items_cart = 1;
-      setCartList([...cartList, newProductInCart]);
     }
-    updateQttAvailable(product);
   };
 
   const updateQuantityCart = (quantity: number) => {
@@ -88,7 +76,6 @@ export const useCartContext = (product: IProducts) => {
       }
       return newCartList;
     };
-    updateQttAvailable(product, quantity);
     return setUpdateQtyCart(quantity);
   };
 

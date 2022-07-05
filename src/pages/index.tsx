@@ -1,18 +1,23 @@
-import type { NextPage } from "next";
-import Head from "next/head";
+import { IProducts } from "contracts";
 import Main from "../components/Main";
 
-const Home: NextPage = () => {
-  return (
-    <div>
-      <Head>
-        <link rel="icon" href="./icons/logo-favicon.webp" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Reviva Fashion</title>
-      </Head>
-      <Main />
-    </div>
-  );
-};
+interface HomeProps {
+  listProduct: IProducts[];
+}
 
-export default Home;
+export default function Home({ listProduct }: HomeProps) {
+  return (
+      <Main listProduct={listProduct} />
+  );
+}
+
+export const getStaticProps = async () => {
+  const response = await fetch("http://localhost:3000/api");
+  const data: IProducts[] = await response.json();
+
+  return {
+    props: {
+      listProduct: data,
+    },
+  };
+};

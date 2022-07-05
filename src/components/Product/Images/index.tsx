@@ -1,8 +1,5 @@
 import { IImagemProduto } from "contracts";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { ParsedUrlQuery } from "querystring";
-// import { Params, useParams } from "react-router-dom";
 import { ProductImage, ProductLinkImage } from "./styles";
 interface IImagesProps {
   id?: number;
@@ -13,12 +10,6 @@ interface IImagesProps {
 }
 
 const Images = ({ images, position, style, id, onClick }: IImagesProps) => {
-  const router = useRouter();
-  const generateUrlIfInside = (params: ParsedUrlQuery) => {
-    return params.id ? `${id}` : `details/${id}`;
-  };
-
-  generateUrlIfInside(router.query);
 
   if (position! >= 0) {
     return (
@@ -32,7 +23,7 @@ const Images = ({ images, position, style, id, onClick }: IImagesProps) => {
     );
   } else {
     return (
-      <Link href={`/${id}`}>
+      <Link href={`/details/${id}`}>
         <ProductLinkImage>
           {images.map((image) => (
             <ProductImage

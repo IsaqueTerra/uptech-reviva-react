@@ -1,16 +1,15 @@
 import ProductCart from "./index";
-import { useContext } from "react";
-import { CartContext } from "contexts/cart.context";
+import { IProducts } from "contracts";
 
-const ProductListSection = () => {
-  const { cartList } = useContext(CartContext);
+interface ProductCartProps {
+  cartList: IProducts[];
+}
 
+const ProductListSection = ({ cartList }: ProductCartProps) => {
   return (
     <>
       {cartList.map((product) => {
-        if (product.items_cart! > 0) {
           return <ProductCart {...product} key={product.id} />;
-        }
       })}
     </>
   );

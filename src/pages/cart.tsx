@@ -1,5 +1,7 @@
-import CartMain from 'components/Cart'
-import React from 'react'
+import CartMain from "components/Cart";
+import React from "react";
 
-const Cart = () => <CartMain />
-export default Cart
+const Cart = () => {
+  return <CartMain />;
+};
+export default Cart;

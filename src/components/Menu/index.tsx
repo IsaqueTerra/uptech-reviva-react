@@ -18,7 +18,7 @@ const Menu = () => {
         {listLink.map((link, index) => {
           return (
             <li key={index}>
-              <ItemLink to={link.href}>{link.content}</ItemLink>
+              <ItemLink href={link.href}>{link.content}</ItemLink>
             </li>
           );
         })}

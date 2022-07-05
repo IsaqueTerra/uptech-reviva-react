@@ -5,8 +5,8 @@ import Sizes from "components/Product/Button_size_list";
 import Images from "components/Product/Images";
 import { IProducts } from "contracts";
 import { useContext, useEffect, useState } from "react";
-import { useCartContext } from "contexts/cart.context";
-import { ProductContext } from "contexts/product.context";
+import { CartContext } from "contexts/cart.context";
+import { addInCart } from "services/cart.services";
 import {
   ContainerDetails,
   Description,
@@ -18,12 +18,13 @@ import {
 
 interface IDetailsProps {
   product: IProducts;
+  listProduct: IProducts[]
 }
 
-const Details = ({ product }: IDetailsProps) => {
-  const { listProduct } = useContext(ProductContext);
-  const { addInCart } = useCartContext(product);
+const Details = ({ product, listProduct }: IDetailsProps) => {
+  const [status, setStatus] = useState(false);
   const [images, setImages] = useState(product.images);
+  const { setCartList } = useContext(CartContext);
 
   useEffect(() => {
     setImages(product.images);
@@ -36,6 +37,7 @@ const Details = ({ product }: IDetailsProps) => {
     copyImages.splice(position, 1, images[0]);
     setImages(copyImages);
   };
+
 
   return (
     <>
@@ -61,9 +63,9 @@ const Details = ({ product }: IDetailsProps) => {
         </WrapperDetailsSizes>
         <WrapperDetailsButton>
           <Button
-            unavailable={product.quantity_available <= 0}
+            unavailable={status}
             onClick={() => {
-              addInCart(product);
+              addInCart(product, setCartList, setStatus);
             }}
           >
             POR NA SACOLA
